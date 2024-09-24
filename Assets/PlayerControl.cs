@@ -24,6 +24,13 @@ public class PlayerControl : MonoBehaviour
     {
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "coins")
+        {
+
+        }
+    }
     public void FixedUpdate()
     {
         myRBD.velocity = new Vector2(_horizontal * velocityModifier, _vertical * velocityModifier);
