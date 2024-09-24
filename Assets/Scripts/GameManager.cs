@@ -12,10 +12,23 @@ public class GameManager : MonoBehaviour
     int score;
     public TextMeshProUGUI scoreText;
 
+   
+    void OnEnable()
+    {
+        PlayerControl.OnCollisionGhost += CurrentScore;
+    }
+    private void OnDisable()
+    {
+        PlayerControl.OnCollisionGhost -= CurrentScore;
+    }
+    private void Update()
+    {
+        scoreText.text = "Score: " + score;
+    }
     public void CurrentScore(int numb)
     {
         score = score + numb;
-        scoreText.text = "Score: " + score;
+  
 
     }
     void RestartGame()

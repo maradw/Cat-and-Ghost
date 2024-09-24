@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3593872939486043186}
   m_Layer: 0
   m_Name: ghost
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comRigidbody2D: {fileID: 6291009014959371876}
+  _cat: {fileID: 0}
   speedMovement: 2.96
-  _Killa: {fileID: 0}
-  gameManagerForMerek: {fileID: 0}
 --- !u!50 &6291009014959371876
 Rigidbody2D:
   serializedVersion: 4
@@ -144,9 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comRigidbody2D: {fileID: 6291009014959371876}
+  _cat: {fileID: 0}
   speedMovement: 0
-  _Killa: {fileID: 0}
-  gameManagerForMerek: {fileID: 0}
 --- !u!58 &3593872939486043186
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,9 +174,9 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.99
+  m_Radius: 1
