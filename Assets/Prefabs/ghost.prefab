@@ -101,8 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comRigidbody2D: {fileID: 6291009014959371876}
-  _cat: {fileID: 0}
-  speedMovement: 2.96
+  timeEstimated: 0.5
 --- !u!50 &6291009014959371876
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +128,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7467183445412901003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comRigidbody2D: {fileID: 6291009014959371876}
-  _cat: {fileID: 0}
-  speedMovement: 0
+  timeEstimated: 0.5
 --- !u!58 &3593872939486043186
 CircleCollider2D:
   m_ObjectHideFlags: 0

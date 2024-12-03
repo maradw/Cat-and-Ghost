@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class Enemy : MonoBehaviour
     public float timeEstimated = 0.5f; 
 
     private float time = 0f;
+    public static event Action<int> OnClickedGhost;
+    public  event Action OnEliminated;
+    private EnemySpawner spawner;
+
     private void Awake()
     {
     }
@@ -19,18 +24,28 @@ public class Enemy : MonoBehaviour
     {
        
     }
+    public void OnMouseDown()
+    {
+       
+       OnEliminated?.Invoke(); // Emite el evento antes de destruir
+       Destroy(this.gameObject);
+       OnClickedGhost?.Invoke(6);
 
+
+        
+        
+    }
     void ChangeDirection()
     {
         // Generar un ángulo aleatorio
-        float angulo = Random.Range(0f, 360f);
+        float angulo = UnityEngine.Random.Range(0f, 360f);
         direction = new Vector3(Mathf.Cos(angulo), 0, Mathf.Sin(angulo)).normalized; // Calcular la nueva dirección
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject); 
+            //Destroy(this.gameObject); 
            //transform.position = Vector2.MoveTowards(this.transform.position, collision.transform.position, speedMovement * Time.deltaTime);
 
         }

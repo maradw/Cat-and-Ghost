@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
-public class PlayerControl : MonoBehaviour
+public class PlayerControlCat : MonoBehaviour
 {
     private float _horizontal;
     [SerializeField] private Rigidbody2D myRBD;
@@ -23,6 +23,8 @@ public class PlayerControl : MonoBehaviour
         _horizontal = move.ReadValue<Vector2>().x;
         _vertical = move.ReadValue<Vector2>().y;
     }
+    
+   
     void Update()
     {
 
